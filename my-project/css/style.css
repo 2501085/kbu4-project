@@ -1,0 +1,184 @@
+/* ===== 색상: 배경 흰색 / 글자 검은색으로 통일 (팀 병합 전까지 임시) ===== */
+:root {
+  --bg: #FFFFFF;
+  --text: #111111;
+  --text-dim: #555555;
+  --text-faint: #999999;
+  --border: #E3E3E3;
+  --radius-s: 3px;
+}
+
+* { box-sizing: border-box; }
+
+/* 화면 크기에 따라 부드럽게 커지는 기본 글자 크기 */
+html { font-size: clamp(16px, 0.4vw + 15px, 18px); }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Noto Sans KR', -apple-system, sans-serif;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.wrap {
+  width: 100%;
+  padding: 0 clamp(12px, 5vw, 96px);
+}
+
+p { margin: 0; }
+a { color: inherit; text-decoration: none; }
+
+/* =====================================================
+   고객후기 + FAQ를 좌우로 나란히 배치
+   ===================================================== */
+.reviews-faq-section {
+  padding: clamp(48px, 7vw, 88px) 0;
+}
+
+/* 화면이 아무리 좁아져도 좌우 2단을 유지합니다 (한쪽으로 쌓이지 않음) */
+.split-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(14px, 4vw, 72px);
+  align-items: start;
+}
+
+/* ----- 왼쪽: 고객후기 (카드형) ----- */
+.reviews-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: clamp(20px, 3vw, 30px);
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--text);
+}
+
+.reviews-head h2 {
+  margin: 0;
+  font-size: clamp(1.15rem, 4vw, 1.9rem);
+  font-weight: 800;
+}
+
+.reviews-head p {
+  color: var(--text-dim);
+  font-size: clamp(0.75rem, 2vw, 0.92rem);
+  margin-top: 6px;
+}
+
+.section-link {
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-bottom: 1px solid var(--text);
+  padding-bottom: 2px;
+  white-space: nowrap;
+}
+
+.review-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(clamp(110px, 34vw, 220px), 1fr));
+  gap: clamp(8px, 1.4vw, 18px);
+}
+
+.review-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-s);
+  padding: clamp(10px, 1.8vw, 22px);
+  position: relative;
+  min-height: clamp(88px, 12vw, 116px);
+}
+
+.review-card .quote-mark {
+  position: absolute;
+  top: 4px;
+  right: 10px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  line-height: 1;
+  color: var(--border);
+}
+
+.review-card .r-title {
+  font-weight: 700;
+  font-size: clamp(0.82rem, 2vw, 0.98rem);
+  padding-right: 20px;
+  margin-bottom: clamp(6px, 1.4vw, 12px);
+}
+
+.review-card .r-date {
+  font-size: clamp(0.68rem, 1.6vw, 0.78rem);
+  color: var(--text-faint);
+  letter-spacing: 0.02em;
+}
+
+/* ----- 오른쪽: FAQ (번호 + 세로 목록) ----- */
+.faq-head {
+  margin-bottom: clamp(20px, 3vw, 30px);
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--text);
+}
+
+.faq-head h2 {
+  margin: 0;
+  font-size: clamp(1.15rem, 4vw, 1.9rem);
+  font-weight: 800;
+}
+
+.faq-head p {
+  color: var(--text-dim);
+  font-size: clamp(0.75rem, 2vw, 0.92rem);
+  margin-top: 6px;
+}
+
+.faq-list { border-top: 1px solid var(--border); }
+
+.faq-item {
+  border-bottom: 1px solid var(--border);
+}
+
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 4px;
+}
+
+.faq-item summary::-webkit-details-marker { display: none; }
+
+.faq-item .q-num {
+  font-weight: 800;
+  font-size: clamp(0.85rem, 2vw, 1.02rem);
+  flex-shrink: 0;
+  min-width: 1.8rem;
+}
+
+.faq-item .q-text {
+  font-weight: 700;
+  font-size: clamp(0.8rem, 2vw, 0.98rem);
+  flex: 1;
+}
+
+.faq-item .q-icon {
+  flex-shrink: 0;
+  font-size: 1.15rem;
+  color: var(--text-dim);
+}
+
+.faq-item[open] .q-icon::before { content: "–"; }
+.faq-item .q-icon::before { content: "+"; }
+
+.faq-item .faq-a {
+  padding: 0 4px 18px 2rem;
+  color: var(--text-dim);
+  font-size: 0.92rem;
+}
+
+/* ===== 작은 화면 여백 조정 ===== */
+@media (max-width: 480px) {
+  .reviews-head, .faq-head { flex-direction: column; align-items: flex-start; }
+}
