@@ -1,0 +1,322 @@
+/* ============================================================
+   목차 (Table of Contents)
+   1. 공통 설정 (Reset / body / 구분선)
+   2. 헤더 (.header)
+   3. 상단 브랜드 로고 바 (.top-brand-bar)
+   4. 히어로 배너 (.hero-section)
+   5. 강사진 소개 (.intro)
+   6. 고객후기 + FAQ (.section-wrap)
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   1. 공통 설정
+   ------------------------------------------------------------ */
+
+/* 모든 요소에 적용되는 리셋 속성
+   box-sizing: border-box
+   → 원래 CSS는 width에 padding/border가 "더해져서" 요소가 커짐
+   → border-box를 쓰면 padding/border가 width 안에 "포함"되게 계산 방식을 바꿔줌
+   → 그래서 padding을 줘도 요소가 화면 밖으로 삐져나가지 않음 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1a1a1a;   /* 전체 페이지 배경을 어두운 색으로 (다크모드) */
+    color: #ffffff;              /* 기본 글자색을 흰색으로 (다크 배경에서 보이도록) */
+    font-family: Arial, sans-serif; /* 페이지 전체 기본 글꼴 지정 */
+}
+
+/* 구간 경계를 보여주는 흰색 구분선 (<hr class="section-divider">)
+   - hr 태그는 기본적으로 두꺼운 회색 "테두리 박스" 모양임
+   - border: none      → 그 기본 테두리를 전부 지움
+   - border-top        → 위쪽에만 얇은 흰 선을 새로 그림
+   - margin: 0          → hr 기본으로 붙는 위아래 여백을 없애서
+                          구간 사이에 어정쩡한 틈이 생기지 않게 함 */
+.section-divider {
+    border: none;
+    border-top: 1px solid #ffffff;
+    margin: 0;
+}
+
+
+/* ------------------------------------------------------------
+   2. 헤더 (네비게이션 바)
+   HTML: <header class="header"> ... </header>
+   ------------------------------------------------------------ */
+
+/* 헤더 전체 박스 */
+.header {
+    background-color: #1a1a1a;         /* 헤더 배경색 (본문과 통일된 다크톤) */
+    color: #fff;                       /* 헤더 안 글자 기본색 흰색 */
+    display: flex;                     /* 자식 요소(로고/메뉴/SNS버튼)를 가로 한 줄로 배치 */
+    align-items: center;               /* 세로 방향: 가운데 정렬 (높이가 서로 달라도 중앙에 맞춤) */
+    justify-content: space-between;    /* 가로 방향: 자식 3개를 양 끝 + 사이 간격 균등하게 배치
+                                           (로고는 왼쪽 끝, SNS버튼은 오른쪽 끝으로 밀림) */
+    padding: 16px 40px;                /* 안쪽 여백: 위아래 16px, 좌우 40px */
+}
+
+/* 로고 텍스트("KBU4 Game Academy") 링크 */
+.header .logo a {
+    color: #fff;                  /* 링크 기본 파란색/밑줄 대신 흰색으로 */
+    font-weight: bold;            /* 글자 굵게 */
+    font-size: 18px;
+    text-decoration: none;        /* a 태그 기본 밑줄 제거 */
+}
+
+/* 네비게이션 메뉴 목록(ul) 전체 */
+.header .gnb ul {
+    display: flex;         /* 메뉴 항목(li)들을 세로 목록이 아니라 가로로 나열 */
+    gap: 30px;              /* 메뉴 항목 사이 간격 30px */
+    list-style: none;       /* li 앞에 자동으로 붙는 점(•) 제거 */
+}
+
+/* 메뉴 항목 각각의 링크 글자 */
+.header .gnb a {
+    color: #fff;
+    text-decoration: none;  /* 밑줄 제거 */
+    font-size: 14px;
+}
+
+/* 헤더 우측 SNS 상담 버튼(카카오톡/텔레그램) 묶음 */
+.header-sns {
+    display: flex;   /* 버튼 2개를 가로로 나란히 */
+    gap: 10px;         /* 버튼 사이 간격 */
+}
+
+/* SNS 버튼 하나하나 (동그란/각진 아이콘 박스) */
+.header-sns a {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;             /* 모서리를 둥글게 깎음 (숫자가 클수록 더 둥글어짐) */
+    display: flex;                  /* 버튼 안의 이모지(💬,✈)를 정중앙에 놓기 위해 flex 사용 */
+    align-items: center;            /* 세로 가운데 */
+    justify-content: center;        /* 가로 가운데 */
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.btn-kakao { background-color: #fee500; }     /* 카카오톡 브랜드 노란색 */
+.btn-telegram { background-color: #29a9eb; }  /* 텔레그램 브랜드 하늘색 */
+
+
+/* ------------------------------------------------------------
+   3. 상단 브랜드 로고 바
+   HTML: <section class="top-brand-bar"> ... </section>
+   ------------------------------------------------------------ */
+
+.top-brand-bar {
+    background-color: #1a1a1a;   /* 헤더와 같은 배경색 → 시각적으로 이어져 보이게 */
+    padding: 20px 0;             /* 위아래 여백만 20px (좌우는 0, 가운데 정렬로 처리) */
+    text-align: center;          /* 안에 있는 이미지(inline 요소 취급)를 가운데 정렬 */
+}
+
+.brand-logo-wrap img {
+    width: 300px;   /* 로고 이미지 가로 크기 고정 */
+    height: 100px;  /* 로고 이미지 세로 크기 고정 */
+}
+
+
+/* ------------------------------------------------------------
+   4. 히어로 배너 (소개 구역)
+   HTML: <section class="hero-section"> ... </section>
+   ------------------------------------------------------------ */
+
+.hero-section {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 60px 20px;   /* 위아래 여백을 크게 줘서 배너 느낌을 냄 */
+}
+
+/* 좌: 텍스트(hero-content) / 우: 이미지(hero-visual)를 나란히 배치하는 틀 */
+.hero-container {
+    max-width: 1100px;     /* 내용이 화면 가득 퍼지지 않게 최대 너비를 제한 */
+    margin: 0 auto;        /* 좌우 마진을 auto로 줘서 화면 가운데로 정렬 (가운데 정렬의 정석 조합) */
+    display: flex;         /* 좌측 텍스트 + 우측 이미지를 가로로 나란히 배치 */
+    align-items: center;   /* 세로 가운데 정렬 */
+    justify-content: space-between; /* 텍스트는 왼쪽, 이미지는 오른쪽 끝으로 밀어냄 */
+    gap: 40px;              /* 텍스트-이미지 사이 최소 간격 */
+}
+
+.hero-title {
+    font-size: 56px;        /* 큰 제목 글자 크기 */
+    line-height: 1.1;       /* 줄간격을 좁게 → 두 줄(KBU4 / TEAM)이 촘촘하게 붙어 보임 */
+    font-weight: 900;       /* 아주 굵게 (900이 최대치) */
+    margin-bottom: 20px;    /* 아래 설명 문단과의 간격 */
+}
+
+/* h1 안의 span 두 개("KBU4","TEAM")를 각각 한 줄씩 줄바꿈 시키는 용도
+   span은 원래 inline이라 줄바꿈이 안 되는데, block으로 바꾸면 줄바꿈됨 */
+.hero-title .title-line {
+    display: block;
+}
+
+.hero-desc {
+    font-size: 15px;
+    line-height: 1.7;   /* 줄간격을 넉넉히 줘서 본문 가독성을 높임 */
+    color: #ccc;        /* 순백색보다 살짝 어두운 회색으로, 제목과 위계 차이를 줌 */
+}
+
+.hero-visual img {
+    max-width: 400px;   /* 이미지가 너무 커지지 않게 최대 크기 제한 */
+    width: 100%;        /* 부모(.hero-visual) 너비에 맞춰 유동적으로 줄어듦 (반응형) */
+}
+
+
+/* ------------------------------------------------------------
+   5. 강사진 소개
+   HTML: <div class="menu-item intro"> ... </div>
+   ------------------------------------------------------------ */
+
+.intro {
+    max-width: 1100px;
+    margin: 0 auto;         /* 가운데 정렬 (hero-container와 동일한 원리) */
+    padding: 60px 20px 0;   /* 위 60px, 좌우 20px, 아래 0 (다음 구간과 자연스럽게 이어지게) */
+}
+
+/* 제목("강사진 소개") */
+.intro-heading h2 {
+    font-size: 28px;
+    margin-bottom: 8px;   /* 바로 아래 설명 문단과의 간격을 좁게 */
+}
+
+/* 설명 문단 */
+.intro-heading p {
+    color: #aaa;             /* 제목보다 흐린 회색 → 부제 느낌 */
+    font-size: 14px;
+    margin-bottom: 30px;     /* 카드 목록과의 간격을 넓게 */
+}
+
+/* 강사 카드 4개를 감싸는 틀: 가로로 나란히 배치 */
+.intro-grid {
+    display: flex;   /* 카드 4개를 세로로 쌓지 않고 가로 한 줄로 배치 */
+    gap: 20px;         /* 카드 사이 간격 */
+}
+
+/* 카드 1개 (이미지 하나를 감싼 div) */
+.intro-card {
+    flex: 1;   /* 부모(.intro-grid) 안에서 카드 4개가 너비를 "균등하게" 나눠 가짐
+                  → 카드 몇 개든 항상 똑같은 폭으로 자동 조정됨 */
+}
+
+/* 카드 안 이미지
+   img는 기본 display 값이 inline이라, 글자처럼 취급되어
+   이미지 아래쪽에 원치 않는 얇은 여백(공백)이 생김.
+   display: block으로 바꿔서 그 여백을 없앰 */
+.intro-card img {
+    width: 100%;     /* 이미지가 카드(.intro-card) 너비에 꽉 차게 늘어남 */
+    display: block;
+}
+
+
+/* ------------------------------------------------------------
+   6. 고객후기 + FAQ
+   HTML: <div class="section-wrap"> ... </div>
+   왼쪽(.col): 고객후기 표 / 오른쪽(.col): FAQ
+   ------------------------------------------------------------ */
+
+/* 고객후기 칸 + FAQ 칸을 좌우로 나란히 배치하는 틀 */
+.section-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    display: flex;   /* 두 개의 .col을 세로로 쌓지 않고 좌우로 배치 */
+    gap: 40px;         /* 두 칸 사이 간격 */
+}
+
+/* 고객후기 칸 / FAQ 칸 각각
+   flex: 1을 둘 다 주면 두 칸이 정확히 절반씩(1:1) 너비를 나눠 가짐 */
+.col {
+    flex: 1;
+}
+
+.col h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.col .desc {
+    color: #aaa;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+/* --- 6-1. 왼쪽: 고객후기 표 --- */
+
+/* 표 전체 틀 */
+.review-table {
+    width: 100%;                   /* 부모(.col) 너비에 꽉 차게 */
+    border: 1px solid #444;        /* 표 바깥 테두리 (어두운 배경에 맞춘 회색) */
+    border-collapse: collapse;     /* 셀마다 따로 생기는 이중 테두리를 하나로 합침
+                                       (안 쓰면 셀 경계가 두 줄로 겹쳐 보임) */
+}
+
+/* 표 제목 행(제목/작성일) */
+.review-table th {
+    border-bottom: 2px solid #fff;  /* 헤더 아래 굵은 흰 줄 → 본문 데이터와 구분 */
+    padding: 10px;                  /* 셀 안쪽 여백 */
+    text-align: left;               /* 글자를 왼쪽 정렬 (표 기본값은 가운데 정렬이라 명시함) */
+    font-size: 14px;
+}
+
+/* 표 본문 셀(후기 제목, 날짜) */
+.review-table td {
+    border-bottom: 1px solid #444;   /* 행마다 얇은 구분선 */
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* 작성일 칸만 따로 지정: td 중에서도 class="date"가 붙은 것만 골라 스타일 적용 */
+.review-table td.date {
+    color: #aaa;              /* 날짜는 덜 중요한 정보라 흐린 색으로 */
+    text-align: right;        /* 오른쪽 정렬 (제목은 왼쪽, 날짜는 오른쪽 → 표가 안정적으로 보임) */
+    white-space: nowrap;      /* 날짜가 "2026.08.24"처럼 중간에 줄바꿈되지 않게 강제로 한 줄 유지 */
+}
+
+/* --- 6-2. 오른쪽: FAQ --- */
+
+/* 질문+답변 한 세트를 감싸는 박스 (카드 형태) */
+.faq-item {
+    border: 1px solid #444;       /* 박스 테두리 */
+    border-radius: 8px;           /* 모서리를 둥글게 */
+    padding: 16px 20px;           /* 박스 안쪽 여백 */
+    margin-bottom: 12px;          /* 박스끼리 세로 간격 */
+}
+
+/* 질문 텍스트 ("Q. ~~") */
+.faq-item .question {
+    font-weight: bold;       /* 질문을 굵게 → 답변과 시각적으로 구분 */
+    margin-bottom: 8px;      /* 바로 아래 답변과의 간격 */
+}
+
+/* 답변 텍스트 */
+.faq-item .answer {
+    font-size: 14px;
+    color: #ccc;          /* 질문(흰색)보다 살짝 흐리게 → 우선순위 차이 표현 */
+    line-height: 1.6;     /* 줄간격을 넉넉히 줘서 여러 줄 답변도 읽기 편하게 */
+}
+
+
+/* ------------------------------------------------------------
+   7. 푸터
+   HTML: <footer class="footer"> ... </footer>
+   ------------------------------------------------------------ */
+
+.footer {
+    background-color: #1a1a1a;      /* 헤더와 같은 배경색으로 통일감 */
+    border: 1px solid #444;     /* 본문과 푸터를 구분하는 얇은 선 */
+    padding: 30px 20px;
+    text-align: center;             /* 안의 텍스트 2줄을 가운데 정렬 */
+}
+
+.footer-logo {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 6px;   /* 저작권 문구와의 간격 */
+}
+
+.footer-copyright {
+    color: #777;      /* 저작권 문구는 가장 눈에 덜 띄게 흐린 색 */
+    font-size: 12px;
+}
