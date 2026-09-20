@@ -1,11 +1,167 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KBU4 Game Academy</title>
+  
+  <!-- CSS 스타일시트 연결 -->
+  <link rel="stylesheet" href="my-project/css/style.css">
 </head>
 <body>
+
+  <!-- ============================================================
+       [1. 상단 네비게이션 헤더 (GNB)]
+       ============================================================ -->
+  <header class="header">
+    <div class="logo">
+      <a href="index.html">KBU4 Game Academy</a>
+    </div>
+
+    <nav class="gnb">
+      <ul>
+        <li><a href="pages/about.html">소개</a></li>
+        <li><a href="#">공지사항 및 이벤트</a></li>
+        <li><a href="#">강사진</a></li>
+        <li><a href="#">고객후기</a></li>
+        <li><a href="pages/contact.html">상담신청</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-sns">
+      <a href="https://open.kakao.com" target="_blank" class="btn-kakao" title="카카오톡 상담">💬</a>
+      <a href="https://t.me" target="_blank" class="btn-telegram" title="텔레그램 상담">✈</a>
+    </div>
+  </header>
+  <main>
     
+    <!-- ------------------------------------------------------------
+         [1-1. 상단 중앙 브랜드 로고 바]
+         ------------------------------------------------------------ -->
+    <section class="top-brand-bar">
+      <div class="brand-logo-wrap">
+        <img src="my-project/images/임시.png" alt="경복대학교 KBU 로고">
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------
+         [2. 중단 히어로 배너 (소개 구역)]
+         ------------------------------------------------------------ -->
+    <section class="hero-section">
+      <div class="hero-container">
+        
+        <!-- 좌측 텍스트 그룹 -->
+        <div class="hero-content">
+          <h1 class="hero-title">
+            <span class="title-line">KBU4</span>
+            <span class="title-line">TEAM</span>
+          </h1>
+
+          <p class="hero-desc">
+            KBU4팀은 실전 이스포츠 전문 코칭 아카데미입니다.<br>
+            초기부터 검증된 전담 강사진 체제를 고수하며,<br>
+            수강생의 플레이 분석부터 개인 맞춤형 피드백까지<br>
+            체계적이고 신뢰할 수 있는 고품질 교육 서비스를 제공합니다.
+          </p>
+        </div>
+
+        <!-- 우측 로고 이미지 (logo.png) -->
+        <div class="hero-visual">
+          <img src="my-project/images/logo.png" alt="KBU4 방패 엠블럼">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------
+         [3. 대표 강사진 소개 섹션]
+         - 화면 전체 가로폭(1200px)을 활용한 4열 그리드 카드
+         ------------------------------------------------------------ -->
+    <section class="instructors-section">
+      <div class="section-container">
+        
+        <!-- 상단 헤더 -->
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">강사진 소개</h2>
+            <p class="section-subtitle">KBU4팀을 대표하는 핵심 강사진입니다. 검증된 실전 노하우를 확인해보세요.</p>
+          </div>
+          <a href="#" class="view-all-btn">강사진 전체보기 &rarr;</a>
+        </div>
+
+        <!-- 4열 카드 그리드 -->
+        <div class="instructor-grid">
+
+          <!-- 코치 1 (탱커) -->
+          <article class="instructor-card">
+            <div class="card-thumb">
+              <span class="position-badge badge-tank">TANK</span>
+              <img src="my-project/images/tank.png" alt="TY 코치" class="coach-img">
+            </div>
+            <div class="card-body">
+              <div class="coach-meta">
+                <h3 class="coach-name">TY</h3>
+                <span class="coach-tier">그랜드마스터 / 랭커</span>
+              </div>
+              <p class="coach-role"><strong>주 포지션:</strong> 메인 탱커 / 한타 브리핑</p>
+              <p class="coach-desc">전 프로팀 1군 코칭 스태프 출신<br>시야 장악 및 대규모 교전 오더 전문</p>
+            </div>
+          </article>
+
+          <!-- 코치 2 (딜러) -->
+          <article class="instructor-card">
+            <div class="card-thumb">
+              <span class="position-badge badge-dps">DPS</span>
+              <img src="my-project/images/ad.png" alt="TD 코치" class="coach-img">
+            </div>
+            <div class="card-body">
+              <div class="coach-meta">
+                <h3 class="coach-name">TD</h3>
+                <span class="coach-tier">탑 500 상위 랭커</span>
+              </div>
+              <p class="coach-role"><strong>주 포지션:</strong> 메인 딜러 / 암살 딜러</p>
+              <p class="coach-desc">에임 루틴 및 1:1 교전 구도 진단<br>포지셔닝 미스 즉각 교정 전문</p>
+            </div>
+          </article>
+
+          <!-- 코치 3 (딜러) -->
+          <article class="instructor-card">
+            <div class="card-thumb">
+              <span class="position-badge badge-dps">DPS</span>
+              <img src="my-project/images/adc.png" alt="AM 코치" class="coach-img">
+            </div>
+            <div class="card-body">
+              <div class="coach-meta">
+                <h3 class="coach-name">AM</h3>
+                <span class="coach-tier">전 프로게이머 출신</span>
+              </div>
+              <p class="coach-role"><strong>주 포지션:</strong> 메인 딜러 / 서브 딜러</p>
+              <p class="coach-desc">공식 리그 다수 본선 진출 이력<br>궁극기 턴 계산 및 리플레이 분석</p>
+            </div>
+          </article>
+
+          <!-- 코치 4 (서포터) -->
+          <article class="instructor-card">
+            <div class="card-thumb">
+              <span class="position-badge badge-sup">SUPPORT</span>
+              <img src="my-project/images/sup.png" alt="SA 코치" class="coach-img">
+            </div>
+            <div class="card-body">
+              <div class="coach-meta">
+                <h3 class="coach-name">SA</h3>
+                <span class="coach-tier">컨텐더스 코치 출신</span>
+              </div>
+              <p class="coach-role"><strong>주 포지션:</strong> 메인 힐러 / 유틸 서포터</p>
+              <p class="coach-desc">생존 동선 최적화 및 템포 조절<br>1:1 멘탈 케어 & 피드백 전문</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/scripts.js"></script>
 </body>
 </html>

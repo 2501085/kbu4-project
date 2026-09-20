@@ -1,0 +1,340 @@
+/* ============================================================
+   1. 기본 리셋 및 전역 스타일
+   ============================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffffff;
+  color: #1a1a1a;
+  font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+main {
+  display: block;
+  width: 100%;
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+
+/* ============================================================
+   2. 상단 네비게이션 헤더 (GNB)
+   ============================================================ */
+.header {
+  width: 100%;
+  height: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 48px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ebebeb;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo a {
+  font-size: 20px;
+  font-weight: 800;
+  color: #111111;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.gnb ul {
+  display: flex;
+  list-style: none;
+  gap: 36px;
+}
+
+.gnb a {
+  text-decoration: none;
+  color: #555555;
+  font-size: 15px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.gnb a:hover {
+  color: #000000;
+}
+
+.header-sns {
+  display: flex;
+  gap: 10px;
+}
+
+.header-sns a {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 16px;
+  transition: transform 0.15s ease;
+}
+
+.header-sns a:hover {
+  transform: translateY(-2px);
+}
+
+.btn-kakao {
+  background-color: #fee500;
+  color: #191919;
+}
+
+.btn-telegram {
+  background-color: #229ed9;
+  color: #ffffff;
+}
+
+
+/* ============================================================
+   상단 중앙 브랜드 로고 바 
+   ============================================================ */
+.top-brand-bar {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 40px 0;                  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #ebebeb; 
+}
+
+.brand-logo-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.brand-logo-wrap img {
+  height: 90px;
+  max-width: 480px;                 
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* ============================================================
+    중단 히어로 배너 
+   ============================================================ */
+.hero-section {
+  width: 100%;
+  padding: 80px 0;                  
+  background-color: #ffffff;
+  border-bottom: 1px solid #ebebeb; 
+  display: block;
+  clear: both;
+}
+
+.hero-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;   
+  align-items: center;
+  gap: 60px;                       
+}
+
+.hero-content {
+  flex: 1.2;
+}
+
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  font-family: "Arial Black", Impact, Pretendard, sans-serif;
+  font-size: 72px;
+  font-weight: 900;
+  line-height: 0.92;
+  letter-spacing: -2px;
+  color: #111111;
+  font-style: italic;
+  margin-bottom: 24px;
+}
+
+.hero-title .title-line {
+  display: block;
+}
+
+.hero-desc {
+  font-size: 15px;
+  color: #555555;
+  line-height: 1.85;
+  word-break: keep-all;
+}
+
+.hero-visual {
+  flex: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-visual img {
+  max-width: 320px;                
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.08));
+}
+
+
+/* ============================================================
+   강사진 소개 섹션 
+   ============================================================ */
+.instructors-section {
+  width: 100%;
+  padding: 90px 0 120px;
+  background-color: #fafbfc;
+  border-bottom: 1px solid #f0f0f0;
+  display: block;
+  clear: both;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 36px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #111111;
+  letter-spacing: -1px;
+  margin-bottom: 8px;
+}
+
+.section-subtitle {
+  font-size: 15px;
+  color: #666666;
+}
+
+.view-all-btn {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #4b5563;
+  padding: 8px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background-color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.view-all-btn:hover {
+  background-color: #111111;
+  color: #ffffff;
+  border-color: #111111;
+}
+
+.instructor-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.instructor-card {
+  background-color: #ffffff;
+  border: 1px solid #ebebeb;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.instructor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
+}
+
+.card-thumb {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  background-color: #eef1f6;
+  overflow: hidden;
+}
+
+.coach-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.instructor-card:hover .coach-img {
+  transform: scale(1.05);
+}
+
+.position-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.badge-tank { background-color: #0284c7; }
+.badge-dps  { background-color: #e11d48; }
+.badge-sup  { background-color: #059669; }
+
+.card-body {
+  padding: 20px;
+}
+
+.coach-meta {
+  margin-bottom: 12px;
+  border-bottom: 1px solid #f1f3f5;
+  padding-bottom: 12px;
+}
+
+.coach-name {
+  font-size: 18px;
+  font-weight: 800;
+  color: #111111;
+  margin-bottom: 4px;
+}
+
+.coach-tier {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #ea580c;
+}
+
+.coach-role {
+  font-size: 13px;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.coach-desc {
+  font-size: 12px;
+  color: #6b7280;
+  line-height: 1.6;
+}
