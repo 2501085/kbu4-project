@@ -1,0 +1,30 @@
+/* ===== 강사진 소개 (intro) ===== */
+.intro-heading{
+    margin-bottom: 32px;
+}
+
+.intro-heading h2{
+    font-size: 28px;
+    font-weight: 700;
+    min-height: 34px;
+    margin: 0 0 8px 0;
+}
+
+.intro-heading p{
+    font-size: 14px;
+    min-height: 20px;
+    margin: 0;
+}
+
+.intro-grid{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.intro-card{
+    flex: 1;
+    aspect-ratio: 3 / 4;
+    background-color: #ffffff;
+    border-radius: 12px;
+}
