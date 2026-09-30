@@ -49,7 +49,7 @@ body {
 /* 헤더 전체 박스 */
 .header {
     background-color: #1a1a1a;         /* 헤더 배경색 (본문과 통일된 다크톤) */
-    color: #fff;                       /* 헤더 안 글자 기본색 흰색 */
+    color: #fff;                       /* 헤더 안 글자색 흰색 */
     display: flex;                     /* 자식 요소(로고/메뉴/SNS버튼)를 가로 한 줄로 배치 */
     align-items: center;               /* 세로 방향: 가운데 정렬 (높이가 서로 달라도 중앙에 맞춤) */
     justify-content: space-between;    /* 가로 방향: 자식 3개를 양 끝 + 사이 간격 균등하게 배치
@@ -134,9 +134,9 @@ body {
     max-width: 1100px;     /* 내용이 화면 가득 퍼지지 않게 최대 너비를 제한 */
     margin: 0 auto;        /* 좌우 마진을 auto로 줘서 화면 가운데로 정렬 (가운데 정렬의 정석 조합) */
     display: flex;         /* 좌측 텍스트 + 우측 이미지를 가로로 나란히 배치 */
-    align-items: center;   /* 세로 가운데 정렬 */
-    justify-content: space-between; /* 텍스트는 왼쪽, 이미지는 오른쪽 끝으로 밀어냄 */
-    gap: 40px;              /* 텍스트-이미지 사이 최소 간격 */
+    align-items: center;   /* 세로 방향을 교차축을 기준으로 가운데 정렬 */
+    justify-content: space-between; /* 가로 방향을 주축을 로고-메뉴-SNS를 양끝/사이로 벌림, space-between은 양 끝에 붙이고 남는 공간 벌림. */
+    gap: 40px;              /* 화면이 작아져도 텍스트-이미지 사이 최소 간격 */
 }
 
 .hero-title {
@@ -170,7 +170,7 @@ body {
    ------------------------------------------------------------ */
 
 .intro {
-    max-width: 1100px;
+    max-width: 1100px; /* 가독성을 지키기 위해서 최대 크기를 1100px 제한 */
     margin: 0 auto;         /* 가운데 정렬 (hero-container와 동일한 원리) */
     padding: 60px 20px 0;   /* 위 60px, 좌우 20px, 아래 0 (다음 구간과 자연스럽게 이어지게) */
 }
@@ -206,7 +206,7 @@ body {
    display: block으로 바꿔서 그 여백을 없앰 */
 .intro-card img {
     width: 100%;     /* 이미지가 카드(.intro-card) 너비에 꽉 차게 늘어남 */
-    display: block;
+    display: block; /* img는 inline속성이라 글자 취급을 받아 미세한 여백이 생김. 그것을 없애기 위해 display: block;속성을 사용 */
 }
 
 
