@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+/* CONSULT */
+
+.consult {
+    width: 94%;
+    margin: 20px auto;
+    padding: 20px 35px;
+    background-color: #ffffff;
+    color: #222222;
+}
+
+.consult h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+.consult h3 {
+    margin: 5px 0 15px;
+    color: #e52b2b;
+    font-size: 14px;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #aaaaaa;
+    margin: 15px 0;
+}
+
+.info {
+    display: flex;
+    gap: 30px;
+}
+
+.info div {
+    width: 33.3%;
+}
+
+.info label {
+    display: block;
+    margin-bottom: 7px;
+}
+
+.info input,
+.info select {
+    width: 100%;
+    height: 35px;
+}
+
+.radio {
+    display: flex;
+    gap: 25px;
+    margin: 15px 0;
+}
+
+.check-list label {
+    display: block;
+    padding: 10px 0;
+    border-bottom: 1px solid #dddddd;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+}
+
+.agree {
+    margin: 20px 0;
+    color: #e52b2b;
+}
+
+button {
+    width: 100%;
+    height: 40px;
+    border: none;
+    background-color: #ef3333;
+    color: white;
+    font-weight: bold;
+}
