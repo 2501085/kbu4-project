@@ -5,23 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>강사진 소개 - KBU4 Game Academy</title>
   
-  
+  <!-- CSS 연결 (pages 폴더에서 상위 css 폴더로 접근) -->
   <link rel="stylesheet" href="../css/teachers.css">
 </head>
 <body>
 
+  <!-- ============================================================
+       [1. 상단 네비게이션 헤더 (GNB)]
+       - pages 내부 기준에 맞게 상대 경로 수정 (홈: ../index.html)
+       ============================================================ -->
   <header class="header">
     <div class="logo">
-      <a href="my-project/index.html">KBU4 Game Academy</a>
+      <a href="../index.html">KBU4 Game Academy</a>
     </div>
 
     <nav class="gnb">
       <ul>
-        <li><a href="index.html">소개</a></li>
+        <li><a href="about.html">소개</a></li>
         <li><a href="#">공지사항 및 이벤트</a></li>
-        <li><a href="my-project/pages/teachers.html" class="active">강사진</a></li>
+        <li><a href="teachers.html" class="active">강사진</a></li>
         <li><a href="#">고객후기</a></li>
-        <li><a href="my-project/pages/contact.html">상담신청</a></li>
+        <li><a href="contact.html">상담신청</a></li>
       </ul>
     </nav>
 
@@ -33,12 +37,20 @@
 
   <main>
 
+    <!-- ------------------------------------------------------------
+         [2. 페이지 타이틀 배너]
+         ------------------------------------------------------------ -->
     <section class="subpage-banner">
       <div class="banner-overlay"></div>
       <h1 class="banner-title">강사진</h1>
     </section>
 
-
+    <!-- ------------------------------------------------------------
+         [3. 딜러진(DEAL) 소개 섹션]
+         - 가운데 딜러(DPS)만 불 들어옴(on), 탱커/힐러는 off
+         - 텍스트 겹침 없는 단정된 MOST HERO 플레이스홀더
+         - 랭커 엠블럼 아이콘 적용
+         ------------------------------------------------------------ -->
     <section class="instructors-content-section">
       <div class="section-container">
         
@@ -46,17 +58,42 @@
           <h2 class="sub-heading">KBU4팀 강사 안내</h2>
           <div class="role-title">DEAL</div>
         </div>
+
         <div class="dealer-grid">
+
+          <!-- [코치 1: TY] -->
           <article class="coach-deal-card">
             <div class="card-top">
-              <div class="rank-badge"></div>
+              <!-- 랭커 엠블럼 -->
+              <div class="rank-badge">
+                <svg viewBox="0 0 24 24" width="34" height="34" fill="#f59e0b">
+                  <path d="M12 2l2.6 5.8 6.4.7-4.8 4.3 1.3 6.2L12 16l-5.5 3 1.3-6.2-4.8-4.3 6.4-.7L12 2z"/>
+                </svg>
+              </div>
+
               <div class="coach-id-wrap">
                 <div class="coach-name-row">
                   <h3 class="coach-nickname">TY</h3>
+                  
+                  <!-- 포지션 배지: 딜러(가운데)만 ON -->
                   <div class="status-badges">
-                    <span class="circle-badge" title="음성 브리핑 가능">MIC</span>
-                    <span class="circle-badge" title="딜러 전문">DPS</span>
-                    <span class="circle-badge" title="개인 맞춤 피드백">+</span>
+                    <span class="role-badge off" title="탱커 코칭 불가">
+                      <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                        <path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/>
+                      </svg>
+                    </span>
+                    <span class="role-badge on" title="딜러 전문 강사">
+                      <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                        <rect x="4" y="6" width="3.5" height="12" rx="1.5"/>
+                        <rect x="10.25" y="3" width="3.5" height="18" rx="1.5"/>
+                        <rect x="16.5" y="6" width="3.5" height="12" rx="1.5"/>
+                      </svg>
+                    </span>
+                    <span class="role-badge off" title="힐러 코칭 불가">
+                      <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                        <path d="M19 10.5h-5.5V5c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v5.5H5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5h5.5V19c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-5.5H19c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5z"/>
+                      </svg>
+                    </span>
                   </div>
                 </div>
                 <p class="coach-summary">현 시즌 챔피언 상위 랭크 유지, 리그 글로벌 본선 기록 보유</p>
@@ -68,19 +105,19 @@
               <div class="hero-list">
                 <div class="hero-item">
                   <div class="hero-img-wrap">
-                    <img src="../images/tracer.png" alt="트레이서" onerror="this.src='https://placehold.co/100x120/1e293b/ffffff?text=TRACER'">
+                    <img src="../images/tracer.png" alt="트레이서" onerror="this.src='https://placehold.co/120x140/1a2230/3b4758?text='">
                   </div>
                   <span class="hero-name">TRACER</span>
                 </div>
                 <div class="hero-item">
                   <div class="hero-img-wrap">
-                    <img src="../images/sojourn.png" alt="소전" onerror="this.src='https://placehold.co/100x120/1e293b/ffffff?text=SOJOURN'">
+                    <img src="../images/sojourn.png" alt="소전" onerror="this.src='https://placehold.co/120x140/1a2230/3b4758?text='">
                   </div>
                   <span class="hero-name">SOJOURN</span>
                 </div>
                 <div class="hero-item">
                   <div class="hero-img-wrap">
-                    <img src="../images/cassidy.png" alt="캐서디" onerror="this.src='https://placehold.co/100x120/1e293b/ffffff?text=CASSIDY'">
+                    <img src="../images/cassidy.png" alt="캐서디" onerror="this.src='https://placehold.co/120x140/1a2230/3b4758?text='">
                   </div>
                   <span class="hero-name">CASSIDY</span>
                 </div>
@@ -88,16 +125,37 @@
             </div>
           </article>
 
+          <!-- [코치 2: TD] -->
           <article class="coach-deal-card">
             <div class="card-top">
-              <div class="rank-badge"></div>
+              <div class="rank-badge">
+                <svg viewBox="0 0 24 24" width="34" height="34" fill="#f59e0b">
+                  <path d="M12 2l2.6 5.8 6.4.7-4.8 4.3 1.3 6.2L12 16l-5.5 3 1.3-6.2-4.8-4.3 6.4-.7L12 2z"/>
+                </svg>
+              </div>
+
               <div class="coach-id-wrap">
                 <div class="coach-name-row">
                   <h3 class="coach-nickname">TD</h3>
+                  
                   <div class="status-badges">
-                    <span class="circle-badge">MIC</span>
-                    <span class="circle-badge">DPS</span>
-                    <span class="circle-badge">+</span>
+                    <span class="role-badge off" title="탱커 코칭 불가">
+                      <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                        <path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/>
+                      </svg>
+                    </span>
+                    <span class="role-badge on" title="딜러 전문 강사">
+                      <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                        <rect x="4" y="6" width="3.5" height="12" rx="1.5"/>
+                        <rect x="10.25" y="3" width="3.5" height="18" rx="1.5"/>
+                        <rect x="16.5" y="6" width="3.5" height="12" rx="1.5"/>
+                      </svg>
+                    </span>
+                    <span class="role-badge off" title="힐러 코칭 불가">
+                      <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                        <path d="M19 10.5h-5.5V5c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v5.5H5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5h5.5V19c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-5.5H19c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5z"/>
+                      </svg>
+                    </span>
                   </div>
                 </div>
                 <p class="coach-summary">전 시즌 랭커 10위권 유지, 다수 프로팀 코칭 코치 출신</p>
@@ -109,19 +167,19 @@
               <div class="hero-list">
                 <div class="hero-item">
                   <div class="hero-img-wrap">
-                    <img src="../images/echo.png" alt="에코" onerror="this.src='https://placehold.co/100x120/1e293b/ffffff?text=ECHO'">
+                    <img src="../images/echo.png" alt="에코" onerror="this.src='https://placehold.co/120x140/1a2230/3b4758?text='">
                   </div>
                   <span class="hero-name">ECHO</span>
                 </div>
                 <div class="hero-item">
                   <div class="hero-img-wrap">
-                    <img src="../images/tracer.png" alt="트레이서" onerror="this.src='https://placehold.co/100x120/1e293b/ffffff?text=TRACER'">
+                    <img src="../images/tracer.png" alt="트레이서" onerror="this.src='https://placehold.co/120x140/1a2230/3b4758?text='">
                   </div>
                   <span class="hero-name">TRACER</span>
                 </div>
                 <div class="hero-item">
                   <div class="hero-img-wrap">
-                    <img src="../images/genji.png" alt="겐지" onerror="this.src='https://placehold.co/100x120/1e293b/ffffff?text=GENJI'">
+                    <img src="../images/genji.png" alt="겐지" onerror="this.src='https://placehold.co/120x140/1a2230/3b4758?text='">
                   </div>
                   <span class="hero-name">GENJI</span>
                 </div>
@@ -132,14 +190,34 @@
           <!-- [코치 3: AM] -->
           <article class="coach-deal-card">
             <div class="card-top">
-              <div class="rank-badge"></div>
+              <div class="rank-badge">
+                <svg viewBox="0 0 24 24" width="34" height="34" fill="#f59e0b">
+                  <path d="M12 2l2.6 5.8 6.4.7-4.8 4.3 1.3 6.2L12 16l-5.5 3 1.3-6.2-4.8-4.3 6.4-.7L12 2z"/>
+                </svg>
+              </div>
+
               <div class="coach-id-wrap">
                 <div class="coach-name-row">
                   <h3 class="coach-nickname">AM</h3>
+                  
                   <div class="status-badges">
-                    <span class="circle-badge">MIC</span>
-                    <span class="circle-badge">DPS</span>
-                    <span class="circle-badge">+</span>
+                    <span class="role-badge off" title="탱커 코칭 불가">
+                      <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                        <path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/>
+                      </svg>
+                    </span>
+                    <span class="role-badge on" title="딜러 전문 강사">
+                      <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                        <rect x="4" y="6" width="3.5" height="12" rx="1.5"/>
+                        <rect x="10.25" y="3" width="3.5" height="18" rx="1.5"/>
+                        <rect x="16.5" y="6" width="3.5" height="12" rx="1.5"/>
+                      </svg>
+                    </span>
+                    <span class="role-badge off" title="힐러 코칭 불가">
+                      <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                        <path d="M19 10.5h-5.5V5c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v5.5H5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5h5.5V19c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-5.5H19c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5z"/>
+                      </svg>
+                    </span>
                   </div>
                 </div>
                 <p class="coach-summary">오버워치 1~2 그랜드마스터 유지, 공식 대회 다수 본선 진출</p>
@@ -151,19 +229,19 @@
               <div class="hero-list">
                 <div class="hero-item">
                   <div class="hero-img-wrap">
-                    <img src="../images/cassidy.png" alt="캐서디" onerror="this.src='https://placehold.co/100x120/1e293b/ffffff?text=CASSIDY'">
+                    <img src="../images/cassidy.png" alt="캐서디" onerror="this.src='https://placehold.co/120x140/1a2230/3b4758?text='">
                   </div>
                   <span class="hero-name">CASSIDY</span>
                 </div>
                 <div class="hero-item">
                   <div class="hero-img-wrap">
-                    <img src="../images/ashe.png" alt="애쉬" onerror="this.src='https://placehold.co/100x120/1e293b/ffffff?text=ASHE'">
+                    <img src="../images/ashe.png" alt="애쉬" onerror="this.src='https://placehold.co/120x140/1a2230/3b4758?text='">
                   </div>
                   <span class="hero-name">ASHE</span>
                 </div>
                 <div class="hero-item">
                   <div class="hero-img-wrap">
-                    <img src="../images/hanzo.png" alt="한조" onerror="this.src='https://placehold.co/100x120/1e293b/ffffff?text=HANZO'">
+                    <img src="../images/hanzo.png" alt="한조" onerror="this.src='https://placehold.co/120x140/1a2230/3b4758?text='">
                   </div>
                   <span class="hero-name">HANZO</span>
                 </div>
@@ -171,17 +249,37 @@
             </div>
           </article>
 
-          <!-- [코치 4: XZ] -->
+         <!-- [코치 4: XZ] -->
           <article class="coach-deal-card">
             <div class="card-top">
-              <div class="rank-badge rank-purple"></div>
+              <div class="rank-badge">
+                <svg viewBox="0 0 24 24" width="34" height="34" fill="#f59e0b">
+                  <path d="M12 2l2.6 5.8 6.4.7-4.8 4.3 1.3 6.2L12 16l-5.5 3 1.3-6.2-4.8-4.3 6.4-.7L12 2z"/>
+                </svg>
+              </div>
+
               <div class="coach-id-wrap">
                 <div class="coach-name-row">
                   <h3 class="coach-nickname">XZ</h3>
+                  <!-- 이하 동일 -->
                   <div class="status-badges">
-                    <span class="circle-badge">MIC</span>
-                    <span class="circle-badge">DPS</span>
-                    <span class="circle-badge">+</span>
+                    <span class="role-badge off" title="탱커 코칭 불가">
+                      <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                        <path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/>
+                      </svg>
+                    </span>
+                    <span class="role-badge on" title="딜러 전문 강사">
+                      <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                        <rect x="4" y="6" width="3.5" height="12" rx="1.5"/>
+                        <rect x="10.25" y="3" width="3.5" height="18" rx="1.5"/>
+                        <rect x="16.5" y="6" width="3.5" height="12" rx="1.5"/>
+                      </svg>
+                    </span>
+                    <span class="role-badge off" title="힐러 코칭 불가">
+                      <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                        <path d="M19 10.5h-5.5V5c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v5.5H5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5h5.5V19c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-5.5H19c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5z"/>
+                      </svg>
+                    </span>
                   </div>
                 </div>
                 <p class="coach-summary">현 시즌 챔피언 상위 랭커 유지, 전 프로 아카데미 전속 코치</p>
@@ -193,19 +291,19 @@
               <div class="hero-list">
                 <div class="hero-item">
                   <div class="hero-img-wrap">
-                    <img src="../images/widowmaker.png" alt="위도우메이커" onerror="this.src='https://placehold.co/100x120/1e293b/ffffff?text=WIDOW'">
+                    <img src="../images/widowmaker.png" alt="위도우메이커" onerror="this.src='https://placehold.co/120x140/1a2230/3b4758?text='">
                   </div>
                   <span class="hero-name">WIDOW</span>
                 </div>
                 <div class="hero-item">
                   <div class="hero-img-wrap">
-                    <img src="../images/tracer.png" alt="트레이서" onerror="this.src='https://placehold.co/100x120/1e293b/ffffff?text=TRACER'">
+                    <img src="../images/tracer.png" alt="트레이서" onerror="this.src='https://placehold.co/120x140/1a2230/3b4758?text='">
                   </div>
                   <span class="hero-name">TRACER</span>
                 </div>
                 <div class="hero-item">
                   <div class="hero-img-wrap">
-                    <img src="../images/genji.png" alt="겐지" onerror="this.src='https://placehold.co/100x120/1e293b/ffffff?text=GENJI'">
+                    <img src="../images/genji.png" alt="겐지" onerror="this.src='https://placehold.co/120x140/1a2230/3b4758?text='">
                   </div>
                   <span class="hero-name">GENJI</span>
                 </div>

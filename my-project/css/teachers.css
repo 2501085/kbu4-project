@@ -1,4 +1,6 @@
-
+/* ============================================================
+   [기본 리셋 및 다크모드 전역 설정]
+   ============================================================ */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,9 +8,9 @@
 }
 
 body {
-  background-color: #1a1a1a;   /* 전체 페이지 배경을 어두운 색으로 (다크모드) */
-  color: #ffffff;              /* 기본 글자색을 흰색으로 (다크 배경에서 보이도록) */
-  font-family: Arial, sans-serif; /* 페이지 전체 기본 글꼴 지정 */
+  background-color: #1a1a1a;   /* 전체 페이지 배경 다크모드 */
+  color: #ffffff;              /* 기본 글자색 흰색 */
+  font-family: Arial, sans-serif; /* 기본 글꼴 지정 */
   line-height: 1.6;
 }
 
@@ -20,7 +22,7 @@ body {
 
 
 /* ============================================================
-   [상단 헤더 (다크 테마)]
+   [상단 네비게이션 헤더 (GNB)]
    ============================================================ */
 .header {
   width: 100%;
@@ -42,12 +44,14 @@ body {
   color: #ffffff;
   text-decoration: none;
   letter-spacing: -0.5px;
+  white-space: nowrap;
 }
 
 .gnb ul {
   display: flex;
   list-style: none;
   gap: 36px;
+  align-items: center;
 }
 
 .gnb a {
@@ -56,6 +60,7 @@ body {
   font-size: 15px;
   font-weight: 600;
   transition: color 0.2s ease;
+  white-space: nowrap;          /* [핵심] 메뉴 글자가 세로로 깨지는 현상 원천 차단 */
 }
 
 .gnb a:hover,
@@ -66,6 +71,7 @@ body {
 .header-sns {
   display: flex;
   gap: 10px;
+  align-items: center;
 }
 
 .header-sns a {
@@ -129,7 +135,7 @@ body {
 
 
 /* ============================================================
-   [강사진 소개 콘텐츠 영역]
+   [강사진 소개 콘텐츠 섹션]
    ============================================================ */
 .instructors-content-section {
   width: 100%;
@@ -149,7 +155,6 @@ body {
   margin-bottom: 18px;
 }
 
-/* 미래지향적 DEAL 폰트 스타일 */
 .role-title {
   font-size: 44px;
   font-weight: 900;
@@ -171,7 +176,6 @@ body {
   gap: 28px;
 }
 
-/* 개별 카드 틀 */
 .coach-deal-card {
   background-color: #21262d;
   border: 1px solid #30363d;
@@ -189,21 +193,27 @@ body {
   border-color: #58a6ff;
 }
 
-/* 카드 상단 영역 (랭크 뱃지 + 이름 + 상태) */
+/* 카드 상단 영역 (랭크 엠블럼 + 닉네임 + 포지션 배지) */
 .card-top {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
+/* 랭커 엠블럼 SVG 발광 */
 .rank-badge {
-  font-size: 36px;
-  line-height: 1;
-  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
-.rank-purple {
-  filter: drop-shadow(0 0 8px rgba(186, 85, 211, 0.6));
+.rank-badge svg {
+  filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.7)); /* 황금빛 네온 */
+}
+
+.rank-badge.rank-purple svg {
+  filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.7)); /* 보라빛 네온 */
 }
 
 .coach-id-wrap {
@@ -224,23 +234,36 @@ body {
   letter-spacing: -0.5px;
 }
 
+/* 포지션 상태 아이콘 (탱커 OFF / 딜러 ON / 힐러 OFF) */
 .status-badges {
   display: flex;
+  align-items: center;
   gap: 6px;
 }
 
-.circle-badge {
+.role-badge {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 22px;
-  height: 22px;
-  padding: 0 6px;
-  border-radius: 11px;
-  background-color: #0d9488;
-  color: #ffffff;
-  font-size: 10px;
-  font-weight: 800;
+  flex-shrink: 0;
+}
+
+/* 1. 활성화 (딜러): 민트 청록색 네온 발광 */
+.role-badge.on {
+  background-color: #00cbb4;
+  color: #0b1a24;
+  border: 1px solid #38e1cc;
+  box-shadow: 0 0 8px rgba(0, 203, 180, 0.6);
+}
+
+/* 2. 비활성화 (탱커, 힐러): 어두운 회색 */
+.role-badge.off {
+  background-color: #161c24;
+  color: #434c56;
+  border: 1px solid #252e39;
 }
 
 .coach-summary {
@@ -251,7 +274,7 @@ body {
 
 
 /* ============================================================
-   [MOST HERO 박스 구역 - 풀화면 비율 최적화]
+   [MOST HERO 박스 구역 - 풀화면 최적 비율]
    ============================================================ */
 .most-hero-box {
   background-color: #17202c;
@@ -263,7 +286,7 @@ body {
   gap: 16px;
 }
 
-/* 세로 텍스트 MOST HERO */
+/* 세로 정렬 MOST HERO 텍스트 */
 .most-hero-label {
   font-size: 11px;
   font-weight: 900;
@@ -275,7 +298,6 @@ body {
   white-space: nowrap;
 }
 
-/* 영웅 3개 나열 그리드 */
 .hero-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -290,7 +312,7 @@ body {
   border-radius: 6px;
   overflow: hidden;
   border: 1px solid #21262d;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .hero-item:hover {
@@ -298,12 +320,12 @@ body {
   border-color: #388bfd;
 }
 
-/* [핵심] 고정 px를 없애고 1:1.15 세로 포트레이트 비율 적용 */
+/* 반응형 영웅 프레임 (1:1.15 비율) */
 .hero-img-wrap {
   width: 100%;
   aspect-ratio: 1 / 1.15;
   overflow: hidden;
-  background-color: #1e2430;
+  background-color: #1a2230;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -317,7 +339,6 @@ body {
   display: block;
 }
 
-/* 하단 단일 영웅 이름 바 */
 .hero-name {
   font-size: 11px;
   font-weight: 800;
@@ -327,4 +348,5 @@ body {
   letter-spacing: 0.5px;
   background-color: #0d1117;
   border-top: 1px solid #1f242c;
+  white-space: nowrap;
 }
