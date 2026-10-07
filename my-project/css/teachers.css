@@ -1,0 +1,330 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #1a1a1a;   /* 전체 페이지 배경을 어두운 색으로 (다크모드) */
+  color: #ffffff;              /* 기본 글자색을 흰색으로 (다크 배경에서 보이도록) */
+  font-family: Arial, sans-serif; /* 페이지 전체 기본 글꼴 지정 */
+  line-height: 1.6;
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+
+/* ============================================================
+   [상단 헤더 (다크 테마)]
+   ============================================================ */
+.header {
+  width: 100%;
+  height: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 48px;
+  background-color: #141414;
+  border-bottom: 1px solid #2b2b2b;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo a {
+  font-size: 20px;
+  font-weight: 800;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.gnb ul {
+  display: flex;
+  list-style: none;
+  gap: 36px;
+}
+
+.gnb a {
+  text-decoration: none;
+  color: #a0a0a0;
+  font-size: 15px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.gnb a:hover,
+.gnb a.active {
+  color: #ffffff;
+}
+
+.header-sns {
+  display: flex;
+  gap: 10px;
+}
+
+.header-sns a {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 16px;
+  transition: transform 0.15s ease;
+}
+
+.header-sns a:hover {
+  transform: translateY(-2px);
+}
+
+.btn-kakao {
+  background-color: #fee500;
+  color: #191919;
+}
+
+.btn-telegram {
+  background-color: #229ed9;
+  color: #ffffff;
+}
+
+
+/* ============================================================
+   [서브페이지 상단 배너]
+   ============================================================ */
+.subpage-banner {
+  width: 100%;
+  height: 180px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('https://images.blz-contentstack.com/v3/assets/blt9c12f249ac15c7ec/blt6b83f3e1b7b7f73a/62fbb1c2e431f94d93ee8a49/overwatch2-share.jpg') center center / cover no-repeat;
+  border-bottom: 1px solid #2b2b2b;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.7);
+}
+
+.banner-title {
+  position: relative;
+  z-index: 2;
+  font-size: 38px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+
+/* ============================================================
+   [강사진 소개 콘텐츠 영역]
+   ============================================================ */
+.instructors-content-section {
+  width: 100%;
+  padding: 60px 0 100px;
+  background-color: #1a1a1a;
+}
+
+.content-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.sub-heading {
+  font-size: 26px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 18px;
+}
+
+/* 미래지향적 DEAL 폰트 스타일 */
+.role-title {
+  font-size: 44px;
+  font-weight: 900;
+  letter-spacing: 6px;
+  color: #ffffff;
+  font-style: italic;
+  display: inline-block;
+  border-bottom: 3px solid #ffffff;
+  padding-bottom: 4px;
+}
+
+
+/* ============================================================
+   [2x2 딜러 카드 그리드]
+   ============================================================ */
+.dealer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+/* 개별 카드 틀 */
+.coach-deal-card {
+  background-color: #21262d;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.coach-deal-card:hover {
+  transform: translateY(-4px);
+  border-color: #58a6ff;
+}
+
+/* 카드 상단 영역 (랭크 뱃지 + 이름 + 상태) */
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.rank-badge {
+  font-size: 36px;
+  line-height: 1;
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+}
+
+.rank-purple {
+  filter: drop-shadow(0 0 8px rgba(186, 85, 211, 0.6));
+}
+
+.coach-id-wrap {
+  flex: 1;
+}
+
+.coach-name-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.coach-nickname {
+  font-size: 26px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.status-badges {
+  display: flex;
+  gap: 6px;
+}
+
+.circle-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 11px;
+  background-color: #0d9488;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.coach-summary {
+  font-size: 13px;
+  color: #8b949e;
+  word-break: keep-all;
+}
+
+
+/* ============================================================
+   [MOST HERO 박스 구역 - 풀화면 비율 최적화]
+   ============================================================ */
+.most-hero-box {
+  background-color: #17202c;
+  border: 1px solid #233144;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* 세로 텍스트 MOST HERO */
+.most-hero-label {
+  font-size: 11px;
+  font-weight: 900;
+  color: #58a6ff;
+  letter-spacing: 1px;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  white-space: nowrap;
+}
+
+/* 영웅 3개 나열 그리드 */
+.hero-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  width: 100%;
+}
+
+.hero-item {
+  display: flex;
+  flex-direction: column;
+  background-color: #0d1117;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #21262d;
+  transition: transform 0.2s ease;
+}
+
+.hero-item:hover {
+  transform: translateY(-2px);
+  border-color: #388bfd;
+}
+
+/* [핵심] 고정 px를 없애고 1:1.15 세로 포트레이트 비율 적용 */
+.hero-img-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1.15;
+  overflow: hidden;
+  background-color: #1e2430;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* 하단 단일 영웅 이름 바 */
+.hero-name {
+  font-size: 11px;
+  font-weight: 800;
+  color: #c9d1d9;
+  text-align: center;
+  padding: 6px 0;
+  letter-spacing: 0.5px;
+  background-color: #0d1117;
+  border-top: 1px solid #1f242c;
+}
