@@ -1,0 +1,222 @@
+/* ============================================================
+   목차 (Table of Contents)
+   1. 공통 설정 (Reset / body / 구분선)
+   2. 헤더 (.header)
+   3. 페이지 배너 (.page-banner)
+   4. 강사진 소개 헤딩 (.teachers-heading)
+   5. 포지션별 강사 섹션 (.role-section)
+   6. 강사 카드 2x2 그리드 (.instructor-grid)
+   7. 푸터 (.footer)
+   8. 반응형 (@media)
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   1. 공통 설정
+   ------------------------------------------------------------ */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+.section-divider {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin: 0;
+}
+
+
+/* ------------------------------------------------------------
+   2. 헤더 (네비게이션 바)
+   ------------------------------------------------------------ */
+.header {
+    background-color: #141414;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 40px;
+}
+
+.header .logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.header .logo img {
+    height: 32px;
+    width: auto;
+}
+
+.header .gnb ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.header .gnb a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.header-sns {
+    display: flex;
+    gap: 10px;
+}
+
+.header-sns a {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.btn-kakao { background-color: #fee500; }
+.btn-telegram { background-color: #29a9eb; }
+
+
+/* ------------------------------------------------------------
+   3. 페이지 배너
+   ------------------------------------------------------------ */
+.page-banner {
+    background-color: #141414;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: center;
+    padding: 30px 0;
+    font-size: 32px;
+    font-weight: 900;
+}
+
+
+/* ------------------------------------------------------------
+   4. 강사진 소개 헤딩
+   ------------------------------------------------------------ */
+.teachers-heading {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 50px 20px 20px;
+}
+
+.teachers-heading h2 {
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+.teachers-heading p {
+    color: #aaa;
+    font-size: 14px;
+}
+
+
+/* ------------------------------------------------------------
+   5. 포지션별 강사 섹션
+   ------------------------------------------------------------ */
+.role-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px 20px 50px;
+}
+
+.role-title {
+    font-size: 34px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+
+/* ------------------------------------------------------------
+   6. 강사 카드 2x2 그리드
+   (왼쪽 위 1 / 오른쪽 위 2 / 왼쪽 아래 3 / 오른쪽 아래 4)
+   ------------------------------------------------------------ */
+.instructor-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.instructor-card-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+}
+
+
+/* ------------------------------------------------------------
+   7. 푸터
+   ------------------------------------------------------------ */
+.footer {
+    background-color: #141414;
+    border-top: 1px solid #444;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.footer-logo {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.footer-copyright {
+    color: #777;
+    font-size: 12px;
+}
+
+
+/* ------------------------------------------------------------
+   8. 반응형 (@media)
+   ------------------------------------------------------------ */
+
+/* 태블릿 (≤900px) */
+@media (max-width: 900px) {
+    .header {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 14px 20px;
+    }
+    .header .gnb ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+    }
+}
+
+/* 모바일 (≤600px) */
+@media (max-width: 600px) {
+    .page-banner {
+        font-size: 24px;
+        padding: 20px 0;
+    }
+    .teachers-heading h2 {
+        font-size: 20px;
+    }
+    .role-title {
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+    .instructor-grid {
+        grid-template-columns: 1fr;
+    }
+    .header .gnb a {
+        font-size: 14px;
+    }
+    .header .gnb ul {
+        gap: 10px 16px;
+    }
+}
