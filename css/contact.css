@@ -1,0 +1,425 @@
+/* ============================================================
+   목차 (Table of Contents)
+   4. 상담 소개 (.consult-intro)
+   5. 간단 자가진단 (.level-check)
+   6. 티어 가이드 (.tier-guide)
+   7. 수강반 안내 (.course-guide)
+   9. 반응형 (@media)
+
+   ※ 헤더·푸터·페이지 배너·기본 설정은 common.css에 있습니다.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   4. 상담 소개
+   ------------------------------------------------------------ */
+
+.consult-intro {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.consult-title {
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+
+.consult-row {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.consult-photo {
+    flex: 0 0 440px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.consult-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    border: 1px solid #444;
+}
+
+.consult-content {
+    flex: 1;
+}
+
+.consult-block h3 {
+    font-size: 20px;
+    color: #ff6b6b;
+    margin-bottom: 14px;
+}
+
+.consult-block p {
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.8;
+    margin-bottom: 14px;
+}
+
+.consult-block strong {
+    color: #fff;
+}
+
+.block-divider {
+    border: none;
+    border-top: 1px solid #444;
+    margin: 30px 0;
+}
+
+/* ------------------------------------------------------------
+   5. 간단 자가진단 (레벨 체크)
+   ------------------------------------------------------------ */
+
+.level-check {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.level-check-card {
+    background-color: #222;
+    border: 1px solid #444;
+    border-radius: 12px;
+    padding: 50px 30px;
+    text-align: center;
+}
+
+.level-check-title {
+    font-size: 26px;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 14px;
+}
+
+.level-check-desc {
+    color: #aaa;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.level-check-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.level-check-box select {
+    background-color: #1a1a1a;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 8px;
+    padding: 14px 20px;
+    font-size: 16px;
+    min-width: 140px;
+    cursor: pointer;
+}
+
+.level-check-box button {
+    background-color: #ff6b6b;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.level-check-box button:hover {
+    background-color: #ff8787;
+}
+
+.level-check-result {
+    color: #fff;
+    font-size: 17px;
+    font-weight: 600;
+    min-height: 24px;
+}
+
+.level-check-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.result-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.result-link-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.result-link.kakao {
+    background-color: #fee500;
+    color: #000;
+}
+
+.result-link.telegram {
+    background-color: #29a9eb;
+    color: #fff;
+}
+
+/* ------------------------------------------------------------
+   6. 티어 가이드
+   (오버워치 2 경쟁전 티어를 가로로 나열하고, 수강반 구간을 표시)
+   ------------------------------------------------------------ */
+
+.tier-guide {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px 20px;
+    text-align: center;
+}
+
+.tier-guide-title {
+    font-size: 26px;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.tier-guide-desc {
+    color: #aaa;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.tier-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.tier-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    min-width: 0;
+}
+
+.tier-icon {
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+    display: block;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 6px;
+    box-sizing: content-box;
+}
+
+.tier-label {
+    font-size: 12px;
+    color: #ccc;
+    white-space: nowrap;
+}
+
+.tier-bands {
+    display: flex;
+    gap: 6px;
+}
+
+.tier-band {
+    flex: 1;
+    min-width: 0;
+    padding: 10px 6px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #1a1a1a;
+    text-align: center;
+    white-space: normal;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    line-height: 1.4;
+}
+
+.band-basic    { flex-grow: 1; background-color: #B6F3EC; }
+
+.band-practice { flex-grow: 1; background-color: #9DCBFF; }
+
+.band-advanced { flex-grow: 1; background-color: #E8AFFF; }
+
+/* ------------------------------------------------------------
+   7. 수강반 안내
+   (자가진단 결과가 실제로 뭘 배우는지 보여주는 섹션)
+   ------------------------------------------------------------ */
+
+.course-guide {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
+    text-align: center;
+}
+
+.course-guide-title {
+    font-size: 26px;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.course-guide-desc {
+    color: #aaa;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+}
+
+.course-card {
+    background-color: #222;
+    border: 1px solid #444;
+    border-radius: 12px;
+    padding: 20px 24px 24px;
+    text-align: left;
+}
+
+.course-name {
+    color: #ff6b6b;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.course-schedule {
+    display: inline-block;
+    background-color: #1a1a1a;
+    border: 1px solid #444;
+    border-radius: 999px;
+    color: #ccc;
+    font-size: 13px;
+    padding: 4px 12px;
+    margin-bottom: 16px;
+}
+
+.course-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.course-list li {
+    color: #ccc;
+    font-size: 15px;
+    line-height: 1.8;
+    padding-left: 16px;
+    position: relative;
+}
+
+.course-list li::before {
+    content: "·";
+    position: absolute;
+    left: 0;
+    color: #ff6b6b;
+}
+
+/* ------------------------------------------------------------
+   9. 반응형 (@media)
+   ------------------------------------------------------------ */
+
+/* 태블릿 (≤900px) */
+@media (max-width: 900px) {
+    .consult-row {
+        flex-direction: column;
+    }
+
+    .consult-photo {
+        flex: none;
+        width: 100%;
+        max-width: 440px;
+        margin: 0 auto;
+    }
+
+    .course-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .tier-row {
+        flex-wrap: wrap;
+        row-gap: 16px;
+    }
+
+    .tier-badge {
+        flex: 0 0 calc(33.333% - 7px);
+    }
+
+    .tier-bands {
+        flex-direction: column;
+    }
+}
+
+/* 모바일 (≤600px) */
+@media (max-width: 600px) {
+    .consult-intro,
+    .level-check,
+    .tier-guide,
+    .course-guide {
+        padding: 30px 16px;
+    }
+
+    .tier-badge {
+        flex: 0 0 calc(50% - 5px);
+    }
+
+    .tier-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .consult-title {
+        font-size: 26px;
+        margin-bottom: 24px;
+    }
+
+    .level-check-card {
+        padding: 30px 16px;
+    }
+
+    .level-check-box {
+        flex-direction: column;
+    }
+
+    .level-check-box select,
+    .level-check-box button {
+        width: 100%;
+    }
+
+    .level-check-links {
+        flex-direction: column;
+    }
+
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+}

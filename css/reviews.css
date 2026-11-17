@@ -1,0 +1,167 @@
+/* ============================================================
+   목차 (Table of Contents)
+   4. 고객후기 헤딩 (.reviews-heading)
+   5. 후기 테이블 (.review-table)
+   7. 반응형 (@media)
+
+   ※ 헤더·푸터·페이지 배너·기본 설정은 common.css에 있습니다.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   4. 고객후기 헤딩
+   ------------------------------------------------------------ */
+
+.reviews-heading {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 50px 20px 20px;
+}
+
+.reviews-heading h2 {
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+.reviews-heading p {
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* ------------------------------------------------------------
+   5. 후기 테이블
+   ------------------------------------------------------------ */
+
+.reviews-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 20px 60px;
+}
+
+.review-search-box {
+    margin-bottom: 16px;
+}
+
+.review-search {
+    width: 100%;
+    background-color: #222;
+    border: 1px solid #555;
+    border-radius: 8px;
+    color: #fff;
+    padding: 12px 16px;
+    font-size: 14px;
+}
+
+.review-search::placeholder {
+    color: #888;
+}
+
+.review-table {
+    width: 100%;
+    border: 1px solid #444;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.review-table th:nth-child(1),
+.review-table td:nth-child(1) {
+    width: 55%;
+}
+
+.review-table th:nth-child(2),
+.review-table td:nth-child(2) {
+    width: 20%;
+}
+
+.review-table th:nth-child(3),
+.review-table td:nth-child(3) {
+    width: 25%;
+}
+
+.review-table td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.review-table th {
+    border-bottom: 2px solid #fff;
+    padding: 12px;
+    text-align: left;
+    font-size: 15px;
+}
+
+.review-table td {
+    border-bottom: 1px solid #444;
+    padding: 12px;
+    font-size: 15px;
+}
+
+.review-table th:last-child,
+.review-table td.date {
+    text-align: right;
+}
+
+.review-table td.date {
+    color: #aaa;
+    white-space: nowrap;
+}
+
+.review-table td.author {
+    color: #ccc;
+    white-space: nowrap;
+}
+
+.no-result {
+    display: none;
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+    padding: 30px 0;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.page-btn {
+    background-color: #222;
+    border: 1px solid #555;
+    border-radius: 6px;
+    color: #ccc;
+    padding: 8px 14px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.page-btn:hover {
+    border-color: #888;
+    color: #fff;
+}
+
+.page-btn.active {
+    background-color: #fff;
+    border-color: #fff;
+    color: #1a1a1a;
+    font-weight: bold;
+}
+
+/* ------------------------------------------------------------
+   7. 반응형 (@media)
+   ------------------------------------------------------------ */
+
+/* 모바일 (≤600px) */
+@media (max-width: 600px) {
+    .reviews-heading h2 {
+        font-size: 20px;
+    }
+
+    .review-table th,
+    .review-table td {
+        font-size: 13px;
+        padding: 8px;
+    }
+}

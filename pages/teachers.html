@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강사진 | KBU4 Game Academy</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/teachers.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../images/logo.png" alt="KBU4 Game Academy 로고">
+            </a>
+        </div>
+
+        <nav class="gnb">
+            <ul>
+                <li><a href="../index.html">소개</a></li>
+                <li><a href="teachers.html">강사진</a></li>
+                <li><a href="reviews.html">고객후기</a></li>
+                <li><a href="contact.html">상담신청</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-sns">
+            <a href="https://open.kakao.com/o/s1ecX5Pi" target="_blank" class="btn-kakao" title="카카오톡 상담">
+                <img src="../images/kakao.png" alt="카카오톡 상담">
+            </a>
+            <a href="https://t.me/Banny_3_official" target="_blank" class="btn-telegram" title="텔레그램 상담">
+                <img src="../images/telegram.png" alt="텔레그램 상담">
+            </a>
+        </div>
+    </header>
+
+    <hr class="section-divider">
+
+    <div class="page-banner">강사진</div>
+
+    <main>
+        <div class="teachers-heading">
+            <h2>KBU4팀 강사 안내</h2>
+            <p>포지션별 전담 강사진을 소개합니다. 포지션과 주력 챔피언으로 검색해보세요.</p>
+        </div>
+
+        <section class="role-section">
+            <div class="teacher-filter-box">
+                <select id="positionSelect" class="teacher-select">
+                    <option value="전체">전체 포지션</option>
+                    <option value="딜러">딜러</option>
+                    <option value="탱커">탱커</option>
+                    <option value="서포터">서포터</option>
+                </select>
+                <input type="text" id="championSearch" class="champion-search" placeholder="주력 챔피언으로 검색 (예: 겐지)">
+                <button type="button" id="resetBtn" class="teacher-reset">초기화</button>
+            </div>
+
+            <p id="resultCount" class="result-count"></p>
+
+            <div class="instructor-grid" id="instructorGrid">
+                <!-- instructors.json 데이터를 JS로 불러와서 채웁니다 -->
+            </div>
+
+            <p id="noResult" class="no-result">검색 결과가 없습니다.</p>
+
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer-logo">KBU4 Game Academy</p>
+        <p class="footer-copyright">© 2026 KBU4 Game Academy. All rights reserved.</p>
+    </footer>
+
+    <!-- 강사 상세 모달 (카드 클릭 시 화면 정중앙에 표시) -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button type="button" class="modal-close" id="modalClose" aria-label="닫기">&times;</button>
+            <img src="" alt="" class="modal-img" id="modalImg">
+            <h3 class="modal-title" id="modalTitle"></h3>
+            <p class="modal-career" id="modalCareer"></p>
+            <p class="modal-champions" id="modalChampions"></p>
+            <p class="modal-bio" id="modalBio"></p>
+        </div>
+    </div>
+
+    <button type="button" id="topBtn" class="top-btn" aria-label="맨 위로 가기">&uarr;</button>
+    <script src="../js/common.js"></script>
+    <script src="../js/teachers.js"></script>
+</body>
+</html>

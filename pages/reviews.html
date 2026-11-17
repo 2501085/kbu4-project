@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고객후기 | KBU4 Game Academy</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/reviews.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../images/logo.png" alt="KBU4 Game Academy 로고">
+            </a>
+        </div>
+
+        <nav class="gnb">
+            <ul>
+                <li><a href="../index.html">소개</a></li>
+                <li><a href="teachers.html">강사진</a></li>
+                <li><a href="reviews.html">고객후기</a></li>
+                <li><a href="contact.html">상담신청</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-sns">
+            <a href="https://open.kakao.com/o/s1ecX5Pi" target="_blank" class="btn-kakao" title="카카오톡 상담">
+                <img src="../images/kakao.png" alt="카카오톡 상담">
+            </a>
+            <a href="https://t.me/Banny_3_official" target="_blank" class="btn-telegram" title="텔레그램 상담">
+                <img src="../images/telegram.png" alt="텔레그램 상담">
+            </a>
+        </div>
+    </header>
+
+    <hr class="section-divider">
+
+    <div class="page-banner">고객후기</div>
+
+    <main>
+        <div class="reviews-heading">
+            <h2>KBU4팀 수강생 후기</h2>
+            <p>실제로 KBU4팀과 함께한 수강생분들의 생생한 후기입니다.</p>
+        </div>
+
+        <div class="reviews-wrap">
+            <div class="review-search-box">
+                <input type="text" id="reviewSearch" class="review-search" placeholder="제목 또는 작성자로 검색">
+            </div>
+
+            <table class="review-table">
+                <thead>
+                    <tr>
+                        <th>제목</th>
+                        <th>작성자</th>
+                        <th>작성일</th>
+                    </tr>
+                </thead>
+                <tbody id="reviewBody">
+                    <!-- reviews.json 데이터를 JS로 불러와서 채웁니다 -->
+                </tbody>
+            </table>
+
+            <p id="noResult" class="no-result">검색 결과가 없습니다.</p>
+
+            <div id="pagination" class="pagination"></div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p class="footer-logo">KBU4 Game Academy</p>
+        <p class="footer-copyright">© 2026 KBU4 Game Academy. All rights reserved.</p>
+    </footer>
+
+    <button type="button" id="topBtn" class="top-btn" aria-label="맨 위로 가기">&uarr;</button>
+    <script src="../js/common.js"></script>
+    <script src="../js/reviews.js"></script>
+</body>
+</html>
