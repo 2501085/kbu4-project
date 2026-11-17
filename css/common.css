@@ -208,3 +208,91 @@ body {
         gap: 10px 16px;
     }
 }
+/* ============================================================
+   [공통 레이아웃 반응형 - 태블릿 & 모바일 UI]
+   ============================================================ */
+
+/* 1. 태블릿 화면 (1024px 이하) */
+@media screen and (max-width: 1024px) {
+  .header,
+  header {
+    padding: 0 24px;
+  }
+
+  .gnb ul,
+  nav ul {
+    gap: 20px;
+  }
+
+  .section-container,
+  .container,
+  .inner {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+/* 2. 모바일 화면 (768px 이하) */
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden; /* 모바일 가로 스크롤 방지 */
+  }
+
+  /* 상단 헤더 2단 배치 */
+  .header,
+  header {
+    height: auto;
+    flex-wrap: wrap;
+    padding: 14px 16px;
+    gap: 12px;
+  }
+
+  .logo a {
+    font-size: 18px;
+  }
+
+  .gnb,
+  header nav {
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+    border-top: 1px solid #2b2b2b;
+    padding-top: 10px;
+  }
+
+  .gnb ul,
+  header nav ul {
+    justify-content: space-around;
+    gap: 12px;
+  }
+
+  .gnb a,
+  header nav a {
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  /* 서브페이지 공통 배너 축소 */
+  .subpage-banner {
+    height: 130px;
+  }
+
+  .banner-title {
+    font-size: 28px;
+  }
+
+  /* 하단 푸터 세로 정렬 */
+  .footer,
+  footer {
+    padding: 30px 16px;
+    text-align: center;
+  }
+
+  .footer-container,
+  .footer-inner,
+  footer > div {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+}

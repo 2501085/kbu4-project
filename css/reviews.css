@@ -165,3 +165,85 @@
         padding: 8px;
     }
 }
+/* ============================================================
+   [고객후기 페이지 반응형 - 태블릿 & 모바일 UI]
+   ============================================================ */
+
+/* 1. 태블릿 화면 (1024px 이하) */
+@media screen and (max-width: 1024px) {
+  .reviews-section,
+  .board-section,
+  main section {
+    padding: 40px 20px;
+  }
+
+  table th,
+  table td {
+    padding: 12px 10px;
+    font-size: 14px;
+  }
+}
+
+/* 2. 모바일 화면 (768px 이하) */
+@media screen and (max-width: 768px) {
+  /* 테이블 가로 넘침 방지 및 여백 축소 */
+  .review-table-wrap,
+  .table-container,
+  .board-wrap {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  table th,
+  table td {
+    padding: 10px 6px;
+    font-size: 13px;
+  }
+
+  /* 제목 칸은 길면 말줄임표(...) 처리 */
+  table td:first-child,
+  table td.title,
+  .review-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* 작성일·작성자 칸 줄바꿈 방지 */
+  table td:last-child,
+  .review-date,
+  .review-author {
+    white-space: nowrap;
+    width: 85px;
+    font-size: 12px;
+  }
+
+  /* 하단 검색창 모바일 꽉 차게 정렬 */
+  .search-box,
+  .search-wrap,
+  .board-search {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .search-box input,
+  .search-wrap input,
+  .board-search input {
+    flex: 1;
+    min-width: 160px;
+    width: 100%;
+  }
+
+  /* 페이지네이션 버튼 크기 조정 */
+  .pagination {
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+}

@@ -423,3 +423,67 @@
         grid-template-columns: 1fr;
     }
 }
+/* ============================================================
+   [상담신청 페이지 반응형 - 태블릿 & 모바일 UI]
+   ============================================================ */
+
+/* 1. 태블릿 화면 (1024px 이하) */
+@media screen and (max-width: 1024px) {
+  .contact-container,
+  .contact-wrap,
+  .consult-grid,
+  .contact-content {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    gap: 24px;
+    padding: 0 20px;
+  }
+}
+
+/* 2. 모바일 화면 (768px 이하) */
+@media screen and (max-width: 768px) {
+  .contact-section,
+  .consult-section,
+  main section {
+    padding: 40px 16px;
+  }
+
+  /* 상담 폼 박스 패딩 축소 */
+  .contact-form,
+  .form-box,
+  .consult-form,
+  form {
+    padding: 20px 16px;
+    width: 100%;
+  }
+
+  /* 라벨과 입력창 세로 배치 */
+  .form-group,
+  .input-group,
+  .form-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+  }
+
+  /* 입력칸 및 선택창 가로 100% 확대 */
+  form input[type="text"],
+  form input[type="tel"],
+  form input[type="email"],
+  form select,
+  form textarea {
+    width: 100%;
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  /* 제출(상담신청) 버튼 가로 100% */
+  form button,
+  .btn-submit,
+  .submit-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+  }
+}
